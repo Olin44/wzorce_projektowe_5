@@ -48,7 +48,7 @@ public class VetVisitor implements Visitor {
     @Override
     public void visit(Reptile reptile) {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Odwiedzane zwierzę: ssak. ");
+        stringBuilder.append("Odwiedzane zwierzę: gad. ");
         addDiagnosis(reptile, stringBuilder);
         diagnosis = stringBuilder.toString();
         System.out.println(diagnosis);
@@ -58,7 +58,6 @@ public class VetVisitor implements Visitor {
         if(animal.isIll){
             stringBuilder.append("Diagnoza: choroba. ");
             stringBuilder.append("Leczenie: antybiotyki, dieta");
-
         }
         else{
             stringBuilder.append("Diagnoza: zdrowa. ");
