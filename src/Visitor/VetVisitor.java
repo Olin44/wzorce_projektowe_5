@@ -1,7 +1,7 @@
 package Visitor;
 
 public class VetVisitor implements Visitor {
-    String diagnosis;
+    private String diagnosis;
 
     @Override
     public void visit(BirdImpl bird) {
@@ -9,15 +9,16 @@ public class VetVisitor implements Visitor {
         stringBuilder.append("Odwiedzane zwierzę: ptak. ");
         if(bird.isIll){
             stringBuilder.append("Diagnoza: choroba. ");
+            if(bird.getDarkMarketValue() > bird.getValue() * 2){
+                stringBuilder.append("Leczenie: zabieram do kliniki na kompleksowe leczenie.");
+            }
+            else{
+                stringBuilder.append("Leczenie: antybiotyki, dieta");
+            }
         }
         else{
             stringBuilder.append("Diagnoza: zdrowy. ");
-        }
-        if(bird.getDarkMarketValue() > bird.getValue() * 2){
-            stringBuilder.append("Leczenie: zabieram do kliniki na kompleksowe leczenie.");
-        }
-        else{
-            stringBuilder.append("Leczenie: antybiotyki, dieta");
+            stringBuilder.append("Leczenie: brak");
         }
         diagnosis = stringBuilder.toString();
         System.out.println(diagnosis);

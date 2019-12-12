@@ -1,8 +1,9 @@
 package State;
 
 interface File {
+    void changeState(FileState fileState);
     void open();
     void close();
-    void read();
     void write();
+    void read();
 }
