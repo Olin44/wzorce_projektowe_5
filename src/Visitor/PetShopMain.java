@@ -7,8 +7,8 @@ public class PetShopMain {
 
         Fish shark = new Fish("Shark", 100.0, false );
         Mammal monkey = new Mammal("Monkey", 232.32, true );
-        Bird eagle = new BirdImpl("Eagle", 21.37,true, 2137.0);
-        Bird sparrow = new BirdImpl("Sparrow ", 14.0,false, 88.0);
+        Bird eagle = new Bird("Eagle", 21.37,true, 2137.0);
+        Bird sparrow = new Bird("Sparrow ", 14.0,false, 88.0);
         Reptile tortoise = new Reptile("Tortoise", 986.0,true);
 
         ArrayList<Animal> animals = new ArrayList<Animal>();

@@ -4,27 +4,16 @@ public class DarkMarketPriceVisitor implements Visitor{
     private double totalOfficialPrice = 0;
 
     @Override
-    public void visit(Mammal mammal) {
-        totalOfficialPrice += mammal.getValue();
+    public void visit_animal(Animal animal) {
+        totalOfficialPrice += animal.getValue();
     }
 
     @Override
-    public void visit(Reptile reptile) {
-        totalOfficialPrice += reptile.getValue();
-    }
-
-    @Override
-    public void visit(BirdImpl bird) {
+    public void visit_bird(Bird bird) {
         totalOfficialPrice += bird.getDarkMarketValue();
     }
 
-    @Override
-    public void visit(Fish fish) {
-        totalOfficialPrice += fish.getValue();
-    }
-
-    public Double getTotalOfficialPrice(){
-
+    Double getTotalOfficialPrice(){
         System.out.println("Cena czarnorynkowa");
         return totalOfficialPrice;
     }

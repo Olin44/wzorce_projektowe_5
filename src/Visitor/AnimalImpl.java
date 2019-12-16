@@ -5,7 +5,7 @@ abstract class AnimalImpl implements Animal {
     Double value;
     boolean isIll;
 
-    public AnimalImpl(String name, Double value, boolean isIll) {
+    AnimalImpl(String name, Double value, boolean isIll) {
         this.name = name;
         this.value = value;
         this.isIll = isIll;

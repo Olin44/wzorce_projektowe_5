@@ -4,7 +4,7 @@ public class VetVisitor implements Visitor {
     private String diagnosis;
 
     @Override
-    public void visit(BirdImpl bird) {
+    public void visit_bird(Bird bird) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Odwiedzane zwierzę: ptak. ");
         if(bird.isIll){
@@ -26,36 +26,16 @@ public class VetVisitor implements Visitor {
     }
 
     @Override
-    public void visit(Fish fish) {
+    public void visit_animal(Animal animal) {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Odwiedzane zwierzę: ryba. ");
-        addDiagnosis(fish, stringBuilder);
+        stringBuilder.append("Odwiedzane zwierzę. ");
+        addDiagnosis(animal, stringBuilder);
         diagnosis = stringBuilder.toString();
         System.out.println(diagnosis);
     }
 
-
-    @Override
-    public void visit(Mammal mammal) {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Odwiedzane zwierzę: ssak. ");
-        addDiagnosis(mammal, stringBuilder);
-        diagnosis = stringBuilder.toString();
-        System.out.println(diagnosis);
-    }
-
-
-    @Override
-    public void visit(Reptile reptile) {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Odwiedzane zwierzę: gad. ");
-        addDiagnosis(reptile, stringBuilder);
-        diagnosis = stringBuilder.toString();
-        System.out.println(diagnosis);
-    }
-
-    private StringBuilder addDiagnosis(AnimalImpl animal, StringBuilder stringBuilder){
-        if(animal.isIll){
+    private StringBuilder addDiagnosis(Animal animal, StringBuilder stringBuilder){
+        if(animal.isIll()){
             stringBuilder.append("Diagnoza: choroba. ");
             stringBuilder.append("Leczenie: antybiotyki, dieta");
         }

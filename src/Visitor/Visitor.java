@@ -1,8 +1,6 @@
 package Visitor;
 
 interface Visitor {
-    void visit(BirdImpl bird);
-    void visit(Fish fish);
-    void visit(Mammal mammal);
-    void visit(Reptile reptile);
+    void visit_animal(Animal animal);
+    void visit_bird(Bird bird);
 }
